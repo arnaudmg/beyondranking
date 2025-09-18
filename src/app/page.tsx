@@ -1,8 +1,6 @@
 "use client";
 import { Bodoni_Moda, Inter, Plus_Jakarta_Sans } from "next/font/google";
-import Link from "next/link";
 import Image from "next/image";
-import type { Metadata } from "next";
 import FAQSection from "./components/FAQSection";
 import { motion } from "framer-motion";
 
@@ -148,7 +146,7 @@ export default function Home() {
             <span className={`${bodoniModa.variable} font-bodoni-moda italic`}>
               SEO
             </span>{" "}
-            should've been done in the first place
+            should&apos;ve been done in the first place
           </motion.h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Subscribe Card */}
@@ -258,11 +256,11 @@ export default function Home() {
             <h2
               className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-3xl font-bold mb-6 text-black`}
             >
-              It's{" "}
+              It&apos;s{" "}
               <span
                 className={`${bodoniModa.variable} font-bodoni-moda italic`}
               >
-                'you'll never go back'
+                &apos;you&apos;ll never go back&apos;
               </span>{" "}
               better
             </h2>
@@ -271,7 +269,8 @@ export default function Home() {
             >
               Ranking Beyond replaces unreliable freelancers and expensive
               long-term agencies with complete monthly SEO execution, delivered
-              so consistently you'll wonder why SEO was ever so complicated.
+              so consistently you&apos;ll wonder why SEO was ever so
+              complicated.
             </p>
           </div>
 
@@ -570,8 +569,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
-                "Finally, an SEO agency that delivers what they promise, when
-                they promise it."
+                &ldquo;Finally, an SEO agency that delivers what they promise,
+                when they promise it.&rdquo;
               </motion.p>
               <motion.div
                 className="mt-6 flex items-center"
@@ -609,8 +608,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               >
-                "They don't just talk SEO, they engineer visibility. Results in
-                weeks, not years."
+                &ldquo;They don&apos;t just talk SEO, they engineer visibility.
+                Results in weeks, not years.&rdquo;
               </motion.p>
               <motion.div
                 className="mt-6 flex items-center"
@@ -923,11 +922,11 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            "AI has transformed creation, but attention remains scarce. In a
-            world where anyone can build, only the visible thrive. Organic
+            &ldquo;AI has transformed creation, but attention remains scarce. In
+            a world where anyone can build, only the visible thrive. Organic
             visibility is your sustainable competitive advantage - it compounds,
             it lasts, it builds authority that competitors notice and customers
-            trust."
+            trust.&rdquo;
           </motion.p>
         </motion.section>
 
