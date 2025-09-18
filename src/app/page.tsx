@@ -3,6 +3,7 @@ import { Bodoni_Moda, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
 import FAQSection from "./components/FAQSection";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
@@ -24,6 +25,62 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export default function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
+  const [isHoveringRight, setIsHoveringRight] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isExitingLeft, setIsExitingLeft] = useState(false);
+  const [isExitingRight, setIsExitingRight] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMobile) {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseEnterLeft = () => {
+    if (!isMobile) {
+      setIsHoveringLeft(true);
+      setIsExitingLeft(false);
+    }
+  };
+
+  const handleMouseLeaveLeft = () => {
+    setIsExitingLeft(true);
+    // Délai pour permettre l'animation de sortie
+    setTimeout(() => {
+      setIsHoveringLeft(false);
+      setIsExitingLeft(false);
+    }, 500); // Correspond à la durée de l'animation
+  };
+
+  const handleMouseEnterRight = () => {
+    if (!isMobile) {
+      setIsHoveringRight(true);
+      setIsExitingRight(false);
+    }
+  };
+
+  const handleMouseLeaveRight = () => {
+    setIsExitingRight(true);
+    // Délai pour permettre l'animation de sortie
+    setTimeout(() => {
+      setIsHoveringRight(false);
+      setIsExitingRight(false);
+    }, 500); // Correspond à la durée de l'animation
+  };
+
   return (
     <div className="min-h-screen bg-white ">
       <div className="max-w-6xl mx-auto border border-[#ddced3]">
@@ -556,11 +613,14 @@ export default function Home() {
         <section className="px-6 py-16">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
-              className="p-6 rounded-lg"
+              className="p-6 rounded-lg relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnterLeft}
+              onMouseLeave={handleMouseLeaveLeft}
             >
               <motion.p
                 className={`${bodoniModa.variable} font-bodoni-moda text-4xl italic text-gray-800`}
@@ -587,13 +647,66 @@ export default function Home() {
                   className="h-8 w-auto"
                 />
               </motion.div>
+
+              {/* Image semrush.png qui suit le curseur */}
+              {isHoveringLeft && !isMobile && (
+                <motion.div
+                  className="fixed pointer-events-none z-50"
+                  style={{
+                    left: mousePosition.x + 20,
+                    top: mousePosition.y - 60,
+                  }}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.2,
+                    rotate: -15,
+                    y: 30,
+                    x: -10,
+                  }}
+                  animate={
+                    isExitingLeft
+                      ? {
+                          opacity: 0,
+                          scale: 0.05,
+                          rotate: 45,
+                          y: -60,
+                          x: 40,
+                        }
+                      : {
+                          opacity: 1,
+                          scale: 1,
+                          rotate: 0,
+                          y: 0,
+                          x: 0,
+                        }
+                  }
+                  transition={{
+                    duration: 0.5,
+                    ease: isExitingLeft ? "easeIn" : "easeOut",
+                    type: "spring",
+                    stiffness: isExitingLeft ? 100 : 150,
+                    damping: isExitingLeft ? 8 : 15,
+                  }}
+                >
+                  <Image
+                    src="/semrush.png"
+                    alt="Semrush"
+                    width={800}
+                    height={400}
+                    className="w-[32rem] h-64 object-contain drop-shadow-2xl"
+                  />
+                </motion.div>
+              )}
             </motion.div>
             <motion.div
-              className="p-6 rounded-lg"
+              className="p-6 rounded-lg relative"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnterRight}
+              onMouseLeave={handleMouseLeaveRight}
             >
               <motion.p
                 className={`${bodoniModa.variable} font-bodoni-moda text-4xl italic text-gray-800`}
@@ -602,8 +715,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               >
-                &ldquo;They don&apos;t just talk SEO, they engineer visibility.
-                Results in weeks, not years.&rdquo;
+                Our organic traffic jumped 300% in 3 months, and we&apos;re
+                ranking #1 for our main keywords. Results in weeks.&rdquo;
               </motion.p>
               <motion.div
                 className="mt-6 flex items-center"
@@ -628,6 +741,56 @@ export default function Home() {
                   </p>
                 </div>
               </motion.div>
+
+              {/* Image semrush.png qui suit le curseur */}
+              {isHoveringRight && !isMobile && (
+                <motion.div
+                  className="fixed pointer-events-none z-50"
+                  style={{
+                    left: mousePosition.x + 20,
+                    top: mousePosition.y - 60,
+                  }}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.2,
+                    rotate: -15,
+                    y: 30,
+                    x: -10,
+                  }}
+                  animate={
+                    isExitingRight
+                      ? {
+                          opacity: 0,
+                          scale: 0.05,
+                          rotate: 45,
+                          y: -60,
+                          x: 40,
+                        }
+                      : {
+                          opacity: 1,
+                          scale: 1,
+                          rotate: 0,
+                          y: 0,
+                          x: 0,
+                        }
+                  }
+                  transition={{
+                    duration: 0.5,
+                    ease: isExitingRight ? "easeIn" : "easeOut",
+                    type: "spring",
+                    stiffness: isExitingRight ? 100 : 150,
+                    damping: isExitingRight ? 8 : 15,
+                  }}
+                >
+                  <Image
+                    src="/semrush_two.png"
+                    alt="Semrush"
+                    width={800}
+                    height={400}
+                    className="w-[32rem] h-64 object-contain drop-shadow-2xl"
+                  />
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </section>
