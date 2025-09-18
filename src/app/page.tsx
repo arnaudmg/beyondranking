@@ -569,29 +569,23 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
-                &ldquo;Finally, an SEO agency that delivers what they promise,
-                when they promise it.&rdquo;
+                &ldquo;We went from barely 50 visitors per month to over 10k.
+                Beyond Ranking delivered exactly what they promised.&rdquo;
               </motion.p>
               <motion.div
-                className="mt-6 flex items-center"
+                className="mt-6 flex justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               >
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src="/execute.png"
-                    alt="Client avatar"
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Sarah Johnson</p>
-                  <p className="text-sm text-gray-600">Marketing Director</p>
-                </div>
+                <Image
+                  src="/MarketFit.com.svg"
+                  alt="MarketFit.com"
+                  width={120}
+                  height={30}
+                  className="h-8 w-auto"
+                />
               </motion.div>
             </motion.div>
             <motion.div
@@ -620,7 +614,7 @@ export default function Home() {
               >
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
-                    src="/execute.png"
+                    src="/iain.jpeg"
                     alt="Client avatar"
                     width={72}
                     height={72}
