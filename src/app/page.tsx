@@ -280,7 +280,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/complete.png"
                     alt="Complete monthly delivery"
                     width={192}
                     height={192}
@@ -302,7 +302,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/pricing.png"
                     alt="Fixed monthly rate"
                     width={192}
                     height={192}
@@ -324,7 +324,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/publish.png"
                     alt="Done-for-you publishing"
                     width={192}
                     height={192}
@@ -346,7 +346,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/guaranteed.png"
                     alt="Guaranteed monthly output"
                     width={192}
                     height={192}
@@ -368,7 +368,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/flexible.png"
                     alt="Flexible and scalable"
                     width={192}
                     height={192}
@@ -390,7 +390,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/subscribe.png"
                     alt="Yours to keep"
                     width={192}
                     height={192}
@@ -419,7 +419,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/complete.png"
                     alt="Complete monthly delivery"
                     width={192}
                     height={192}
@@ -441,7 +441,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/pricing.png"
                     alt="Fixed monthly rate"
                     width={192}
                     height={192}
@@ -463,7 +463,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/publish.png"
                     alt="Done-for-you publishing"
                     width={192}
                     height={192}
@@ -485,7 +485,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/guaranteed.png"
                     alt="Guaranteed monthly output"
                     width={192}
                     height={192}
@@ -507,7 +507,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/flexible.png"
                     alt="Flexible and scalable"
                     width={192}
                     height={192}
@@ -529,7 +529,7 @@ export default function Home() {
               <li className="flex flex-col w-64">
                 <div className="w-48 h-48 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
                   <Image
-                    src="/marble_computer.png"
+                    src="/subscribe.png"
                     alt="Yours to keep"
                     width={192}
                     height={192}
