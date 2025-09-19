@@ -1015,9 +1015,9 @@ export default function Home() {
                           </div>
                           <div className="space-y-3">
                             <p>
-                              We develop custom "free" tools that boost your
-                              brand awareness and attract potential customers to
-                              your website.
+                              We develop custom &ldquo;free&rdquo; tools that
+                              boost your brand awareness and attract potential
+                              customers to your website.
                             </p>
                             <p className="text-green-300">
                               <strong>✓ 1 tool included</strong> in your monthly
@@ -1164,13 +1164,14 @@ export default function Home() {
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
                       Beyond traditional SEO, we believe in creating genuine
-                      value that extends far beyond rankings. Free tools aren't
-                      just marketing gimmicks—they're trust-builders that
-                      establish your authority, solve real problems for your
-                      audience, and create meaningful touchpoints that turn
-                      prospects into clients. These tools become assets that
-                      work for you 24/7, demonstrating your expertise while
-                      building trust before the first conversation even begins.
+                      value that extends far beyond rankings. Free tools
+                      aren&apos;t just marketing gimmicks—they&apos;re
+                      trust-builders that establish your authority, solve real
+                      problems for your audience, and create meaningful
+                      touchpoints that turn prospects into clients. These tools
+                      become assets that work for you 24/7, demonstrating your
+                      expertise while building trust before the first
+                      conversation even begins.
                     </p>
                   </motion.div>
                 </div>
