@@ -761,7 +761,7 @@ export default function Home() {
             </motion.div>
             <motion.div
               className="p-6 rounded-lg relative"
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -954,7 +954,7 @@ export default function Home() {
                       </motion.div>
                       <motion.div
                         className="space-y-3"
-                        initial={{ opacity: 0, x: 20 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{
@@ -1105,7 +1105,7 @@ export default function Home() {
               {/* Right Column - Audit Philosophy */}
               <motion.div
                 className="bg-white border border-gray-200 rounded-lg p-8"
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -1207,7 +1207,7 @@ export default function Home() {
               {/* Try it for a week Card */}
               <motion.div
                 className="border-2 border-dashed border-gray-300 rounded-xl p-8 bg-white"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
