@@ -1009,7 +1009,7 @@ export default function Home() {
                         Brand Awareness Tool Development
                         <span className="text-xs ml-1">ⓘ</span>
                         {/* Enhanced Tooltip with Multiple Sectors */}
-                        <div className="absolute bottom-full left-0 mb-2 w-96 bg-black/95 text-white text-xs rounded-lg p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 shadow-2xl border border-white/30">
+                        <div className="absolute bottom-full left-0 mb-2 w-96 bg-black/95 text-white text-xs rounded-lg p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 shadow-2xl border border-white/30 hidden md:block">
                           <div className="font-semibold mb-3 text-sm">
                             Custom Awareness Tools
                           </div>
