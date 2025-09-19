@@ -4,6 +4,7 @@ import Image from "next/image";
 import FAQSection from "./components/FAQSection";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 
 const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
@@ -41,6 +42,14 @@ export default function Home() {
     window.addEventListener("resize", checkMobile);
 
     return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Initialize Cal.com
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "beyond-ranking-seo" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -799,7 +808,7 @@ export default function Home() {
         <section id="pricing" className="px-6 py-16">
           <div className="max-w-6xl mx-auto">
             <motion.h2
-              className={`${bodoniModa.variable} font-bodoni-moda text-3xl italic mb-12 text-black text-center`}
+              className={`${bodoniModa.variable} font-bodoni-moda text-3xl italic mb-12 text-black`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -924,13 +933,16 @@ export default function Home() {
 
                   {/* CTA Button */}
                   <motion.button
-                    className="w-full bg-white/10 border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-3"
+                    className="w-full bg-white/10 border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-3 cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
                     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                     whileTap={{ scale: 0.95 }}
+                    data-cal-namespace="beyond-ranking-seo"
+                    data-cal-link="arnaud-mege/beyond-ranking-seo"
+                    data-cal-config='{"layout":"month_view"}'
                   >
                     JOIN TODAY!
                   </motion.button>
@@ -1085,6 +1097,42 @@ export default function Home() {
             it lasts, it builds authority that competitors notice and customers
             trust.&rdquo;
           </motion.p>
+        </motion.section>
+
+        {/* Cal.com Booking Section */}
+        <motion.section
+          className="px-6 py-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="">
+            <motion.h2
+              className={`${bodoniModa.variable} font-bodoni-moda text-3xl italic mb-6 text-black`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              Ready to get started?
+            </motion.h2>
+
+            <motion.div
+              className="bg-white rounded-2xl overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            >
+              <Cal
+                namespace="beyond-ranking-seo"
+                calLink="arnaud-mege/beyond-ranking-seo"
+                style={{ width: "100%", height: "600px", overflow: "scroll" }}
+                config={{ layout: "month_view" }}
+              />
+            </motion.div>
+          </div>
         </motion.section>
 
         {/* Footer */}
