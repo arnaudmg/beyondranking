@@ -93,108 +93,160 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white ">
       <div className="max-w-6xl mx-auto border border-[#ddced3]">
-        {/* Logo Header */}
-        <header className="px-6 py-6">
-          <Image
-            src="/BeyondRanking.svg"
-            alt="Beyond Ranking"
-            width={233}
-            height={30}
-            className="h-8 w-auto"
-          />
-        </header>
+        {/* Hero Section with Header and Content */}
+        <section className="px-6 py-12">
+          <div className="grid lg:grid-cols-3 gap-12 items-stretch min-h-[500px]">
+            {/* Left Column - Header + Content */}
+            <div className="lg:col-span-2 space-y-8 flex flex-col justify-between h-full">
+              {/* Logo Header */}
+              <header className="flex justify-between items-center">
+                <Image
+                  src="/BeyondRanking.svg"
+                  alt="Beyond Ranking"
+                  width={180}
+                  height={24}
+                  className="h-6 w-auto"
+                />
+                <div className="hidden md:flex items-center gap-3">
+                  <button
+                    onClick={() => {
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={`${plusJakartaSans.variable} font-plus-jakarta-sans px-4 py-1.5 border border-[#ddced3] text-black rounded-md text-sm font-medium hover:bg-gray-100 transition-colors cursor-pointer`}
+                  >
+                    See Pricing
+                  </button>
+                  <button
+                    onClick={() => {
+                      document
+                        .getElementById("cal-booking")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={`${plusJakartaSans.variable} font-plus-jakarta-sans px-4 py-1.5 border border-[#ddced3] text-black rounded-md text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-1.5 cursor-pointer`}
+                  >
+                    <Image
+                      src="/phone.svg"
+                      alt="Phone icon"
+                      width={12}
+                      height={12}
+                      className="w-3 h-3"
+                    />
+                    Book a call
+                  </button>
+                </div>
+              </header>
 
-        {/* Hero Section */}
-        <section className="px-6 py-20">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
-            {/* Left Content */}
-            <motion.div
-              className="lg:col-span-2"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <motion.h1
-                className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-4xl md:text-5xl font-bold mb-6 text-black`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              >
-                SEO subscriptions for modern businesses
-              </motion.h1>
-              <motion.p
-                className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-xl text-gray-800 mb-4 font-semibold`}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              >
-                Measurable visibility in 60 days, not 6 months
-              </motion.p>
-              <motion.p
-                className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-lg text-gray-700 mb-8 leading-relaxed`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-              >
-                While competitors lock you into year-long contracts, we deliver
-                results fast. Pause or cancel anytime.
-              </motion.p>
+              {/* Hero Content */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <a
-                  href="#pricing"
-                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans bg-black text-white px-8 py-3 rounded-md font-semibold text-left hover:bg-gray-800 transition-colors`}
+                <motion.h1
+                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-4xl md:text-5xl font-bold mb-6 text-black`}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                  See pricing
-                </a>
+                  SEO subscriptions for modern businesses
+                </motion.h1>
+                <motion.p
+                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-xl text-gray-800 mb-4 font-semibold`}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                >
+                  Measurable visibility in 60 days, not 6 months
+                </motion.p>
+                <motion.p
+                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-lg text-gray-700 mb-8 leading-relaxed`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                >
+                  While competitors lock you into year-long contracts, we
+                  deliver results fast. Pause or cancel anytime.
+                </motion.p>
               </motion.div>
-            </motion.div>
+            </div>
 
-            {/* Right Image */}
+            {/* Right Column - Image */}
             <motion.div
-              className="relative"
+              className="lg:col-span-1 relative flex"
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              <div className="relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-lg aspect-[3/4] w-full">
                 <Image
                   src="/marble_computer.png"
                   alt="Modern workspace with marble computer"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
+                  fill
+                  className="object-cover"
                 />
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
+                {/* Join Beyond Copywriting */}
+                <motion.div
+                  className="absolute bottom-4 left-4 right-4"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+                >
+                  <p
+                    className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-sm font-medium text-white mb-1`}
+                  >
+                    Ready to transform your visibility?
+                  </p>
+                  <p
+                    className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-2xl font-bold text-white`}
+                  >
+                    Join BeyondRanking
+                  </p>
+                  <p
+                    className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-xs text-white/80 mt-1`}
+                  >
+                    Where businesses become impossible to ignore
+                  </p>
+
+                  {/* CTA Button */}
+                  <motion.button
+                    onClick={() => {
+                      document
+                        .getElementById("cal-booking")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="mt-4 w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 flex items-center justify-between hover:bg-white/20 transition-colors cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="text-left">
+                      <p
+                        className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-sm font-semibold text-white`}
+                      >
+                        Book a 15-min intro call
+                      </p>
+                      <p
+                        className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-xs text-white/70`}
+                      >
+                        Schedule now
+                      </p>
+                    </div>
+                    <Image
+                      src="/arrow_book.svg"
+                      alt="Book a call"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
+                  </motion.button>
+                </motion.div>
               </div>
-              {/* Join Beyond Copywriting */}
-              <motion.div
-                className="absolute bottom-4 left-4 max-w-xs"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
-              >
-                <p
-                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-sm font-medium text-white mb-1`}
-                >
-                  Ready to transform your visibility?
-                </p>
-                <p
-                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-3xl font-bold text-white`}
-                >
-                  Join BeyondRanking
-                </p>
-                <p
-                  className={`${plusJakartaSans.variable} font-plus-jakarta-sans text-xs text-white/80 mt-1`}
-                >
-                  Where businesses become impossible to ignore
-                </p>
-              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -825,7 +877,6 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 <div className="text-white rounded-2xl p-8 relative z-10 shadow-2xl">
                   {/* Header */}
@@ -931,6 +982,97 @@ export default function Home() {
                     </div>
                   </motion.div>
 
+                  {/* Brand Awareness Tool Development - Full Width */}
+                  <motion.div
+                    className="relative bg-black/20 backdrop-blur-sm rounded-xl p-6 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                  >
+                    <div className="absolute -top-2 left-6 bg-white/10 border border-white/20 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      BONUS FEATURE
+                    </div>
+
+                    <div className="mt-4">
+                      <motion.div
+                        className="text-white text-sm relative group cursor-help inline-block"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{
+                          duration: 0.6,
+                          delay: 0.6,
+                          ease: "easeOut",
+                        }}
+                      >
+                        Brand Awareness Tool Development
+                        <span className="text-xs ml-1">ⓘ</span>
+                        {/* Enhanced Tooltip with Multiple Sectors */}
+                        <div className="absolute bottom-full left-0 mb-2 w-96 bg-black/95 text-white text-xs rounded-lg p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 shadow-2xl border border-white/30">
+                          <div className="font-semibold mb-3 text-sm">
+                            Custom Awareness Tools
+                          </div>
+                          <div className="space-y-3">
+                            <p>
+                              We develop custom "free" tools that boost your
+                              brand awareness and attract potential customers to
+                              your website.
+                            </p>
+                            <p className="text-green-300">
+                              <strong>✓ 1 tool included</strong> in your monthly
+                              subscription
+                            </p>
+
+                            <div>
+                              <p className="font-semibold mb-2">
+                                Examples by Industry:
+                              </p>
+                              <div className="space-y-1 text-xs">
+                                <p>
+                                  <strong>Law Firms:</strong> Legal fee
+                                  calculators, contract templates, compliance
+                                  checklists
+                                </p>
+                                <p>
+                                  <strong>Real Estate:</strong> Mortgage
+                                  calculators, property valuation tools, market
+                                  trend trackers
+                                </p>
+                                <p>
+                                  <strong>Notaries:</strong> Document
+                                  preparation guides, fee calculators,
+                                  appointment schedulers
+                                </p>
+                                <p>
+                                  <strong>M&A/Finance:</strong> Valuation
+                                  simulators, multiple trackers, due diligence
+                                  checklists
+                                </p>
+                                <p>
+                                  <strong>Consulting:</strong> ROI calculators,
+                                  assessment tools, industry benchmarks
+                                </p>
+                                <p>
+                                  <strong>Healthcare:</strong> Symptom checkers,
+                                  appointment booking, insurance guides
+                                </p>
+                              </div>
+                            </div>
+
+                            <p className="text-yellow-300">
+                              <strong>Additional tools:</strong> Available as
+                              add-ons for enhanced visibility across multiple
+                              touchpoints
+                            </p>
+                          </div>
+                          {/* Arrow */}
+                          <div className="absolute top-full left-8 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-black/95"></div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+
                   {/* CTA Button */}
                   <motion.button
                     className="w-full bg-white/10 border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-3 cursor-pointer"
@@ -969,7 +1111,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 <motion.h3
-                  className={`${bodoniModa.variable} font-bodoni-moda text-2xl italic mb-6 text-black`}
+                  className={`${bodoniModa.variable} font-bodoni-moda text-xl italic mb-6 text-black`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -985,7 +1127,7 @@ export default function Home() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                   >
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed">
                       Most SEO audits are little more than noise: endless tool
                       reports counting the same issue a thousand times, yet
                       missing the point entirely. A true audit is not about
@@ -999,13 +1141,36 @@ export default function Home() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                   >
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed">
                       It begins with strategy, with a clear map of your
                       competitive landscape, with tools adapted to your business
                       instead of generic dashboards. What we deliver is not a
                       forgotten PDF full of alerts, but a living blueprint:
                       prioritized, contextualized, and built to drive measurable
                       impact.
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                  >
+                    <h4
+                      className={`${bodoniModa.variable} font-bodoni-moda text-xl italic mb-4 text-black`}
+                    >
+                      The power of free tools
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      Beyond traditional SEO, we believe in creating genuine
+                      value that extends far beyond rankings. Free tools aren't
+                      just marketing gimmicks—they're trust-builders that
+                      establish your authority, solve real problems for your
+                      audience, and create meaningful touchpoints that turn
+                      prospects into clients. These tools become assets that
+                      work for you 24/7, demonstrating your expertise while
+                      building trust before the first conversation even begins.
                     </p>
                   </motion.div>
                 </div>
@@ -1025,7 +1190,6 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 <div className="flex items-start gap-4">
                   <div>
@@ -1046,7 +1210,6 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
                 <div className="flex items-start gap-4">
                   <div>
@@ -1101,6 +1264,7 @@ export default function Home() {
 
         {/* Cal.com Booking Section */}
         <motion.section
+          id="cal-booking"
           className="px-6 py-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
