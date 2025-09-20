@@ -675,8 +675,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
               className="p-6 rounded-lg relative"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               onMouseMove={handleMouseMove}
@@ -761,8 +761,8 @@ export default function Home() {
             </motion.div>
             <motion.div
               className="p-6 rounded-lg relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               onMouseMove={handleMouseMove}
@@ -873,8 +873,8 @@ export default function Home() {
               {/* Left Column - Pricing */}
               <motion.div
                 className="relative"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
@@ -927,8 +927,8 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <motion.div
                         className="space-y-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{
                           duration: 0.6,
@@ -954,8 +954,8 @@ export default function Home() {
                       </motion.div>
                       <motion.div
                         className="space-y-3"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{
                           duration: 0.6,
@@ -997,8 +997,8 @@ export default function Home() {
                     <div className="mt-4">
                       <motion.div
                         className="text-white text-sm relative group cursor-help inline-block"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{
                           duration: 0.6,
@@ -1105,8 +1105,8 @@ export default function Home() {
               {/* Right Column - Audit Philosophy */}
               <motion.div
                 className="bg-white border border-gray-200 rounded-lg p-8"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
@@ -1187,8 +1187,8 @@ export default function Home() {
               {/* Pause Anytime Card */}
               <motion.div
                 className="border-2 border-dashed border-gray-300 rounded-xl p-8 bg-white"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
@@ -1207,8 +1207,8 @@ export default function Home() {
               {/* Try it for a week Card */}
               <motion.div
                 className="border-2 border-dashed border-gray-300 rounded-xl p-8 bg-white"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               >
